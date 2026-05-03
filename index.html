@@ -1566,19 +1566,14 @@
             tilt.x += ((-mouse.y * TILT) - tilt.x) * 0.08;
             tilt.y += (( mouse.x * TILT) - tilt.y) * 0.08;
 
-            if (!reduceMotion && !isTouchDevice) {
+            if (!reduceMotion) {
                 spinY += dt * (Math.PI * 2 / 18);   // 18 s for full ambient spin
             }
-            // On touch devices the logo holds still (no spin, no tilt) so it
-            // doesn't appear to react to scrolling. The intro reveal still
-            // plays once when the section enters the viewport.
-            if (isTouchDevice) {
-                group.rotation.y = 0;
-                group.rotation.x = 0;
-            } else {
-                group.rotation.y = spinY + tilt.y;
-                group.rotation.x = tilt.x + Math.sin(t * 0.4) * 0.04;
-            }
+            // Spin and mouse-tilt compose cleanly without overwriting each
+            // other. On touch devices the mousemove listener is skipped, so
+            // tilt stays at 0 — only the ambient spin remains.
+            group.rotation.y = spinY + tilt.y;
+            group.rotation.x = tilt.x + Math.sin(t * 0.4) * 0.04;
 
             // Drive the per-bar reveal until every bar has settled
             if (appearStart != null) {
