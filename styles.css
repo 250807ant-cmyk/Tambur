@@ -2418,8 +2418,20 @@ body.is-nav-open {
     .trk-card[data-pos="1"]  { transform: translateX(165px)  rotateY(-34deg) scale(0.82); }
     .trk-card[data-pos="-2"] { opacity: 0.12; transform: translateX(-275px) rotateY(50deg) scale(0.62); }
     .trk-card[data-pos="2"]  { opacity: 0.12; transform: translateX(275px)  rotateY(-50deg) scale(0.62); }
-    .trk-player { max-width: calc(100% - 56px); }
-    .trk-player-right .trk-ctrl-btn:first-child { display: none; }
+    .trk-player {
+        max-width: calc(100% - 56px);
+        /* Mobile browsers (esp. iOS) often don't render backdrop-filter
+           against transparent backgrounds — back the glass gradient with a
+           solid dark layer so the bar reads as a discrete element. */
+        background:
+            linear-gradient(135deg,
+                rgba(255, 255, 255, 0.15) 0%,
+                rgba(255, 255, 255, 0.05) 40%,
+                rgba(255, 255, 255, 0.02) 60%,
+                rgba(255, 255, 255, 0.10) 100%),
+            rgba(18, 18, 18, 0.78);
+    }
+    .trk-player-right > .trk-ctrl-btn:first-child { display: none; }
 }
 
 /* ── Responsive ──────────────────────────────── */

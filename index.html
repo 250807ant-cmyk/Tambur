@@ -1515,13 +1515,18 @@
         // ── MOUSE TRACKING ────────────────────────────────────
         // Cursor position normalised to -1..1 across the viewport.
         // Smoothed via lerp inside the render loop for a soft, weighty feel.
+        // Skipped on touch devices — the logo stays static there so it
+        // doesn't appear to react when the user scrolls the page.
+        const isTouchDevice = matchMedia('(hover: none), (pointer: coarse)').matches;
         const mouse  = { x: 0, y: 0 };
         const tilt   = { x: 0, y: 0 };
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = (e.clientX / window.innerWidth)  * 2 - 1;
-            mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
-        }, { passive: true });
-        window.addEventListener('mouseleave', () => { mouse.x = 0; mouse.y = 0; });
+        if (!isTouchDevice) {
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = (e.clientX / window.innerWidth)  * 2 - 1;
+                mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+            }, { passive: true });
+            window.addEventListener('mouseleave', () => { mouse.x = 0; mouse.y = 0; });
+        }
 
         // ── ANIMATION ─────────────────────────────────────────
         const clock = new THREE.Clock();
@@ -1561,12 +1566,19 @@
             tilt.x += ((-mouse.y * TILT) - tilt.x) * 0.08;
             tilt.y += (( mouse.x * TILT) - tilt.y) * 0.08;
 
-            if (!reduceMotion) {
+            if (!reduceMotion && !isTouchDevice) {
                 spinY += dt * (Math.PI * 2 / 18);   // 18 s for full ambient spin
             }
-            // Spin and mouse-tilt compose cleanly without overwriting each other
-            group.rotation.y = spinY + tilt.y;
-            group.rotation.x = tilt.x + Math.sin(t * 0.4) * 0.04;
+            // On touch devices the logo holds still (no spin, no tilt) so it
+            // doesn't appear to react to scrolling. The intro reveal still
+            // plays once when the section enters the viewport.
+            if (isTouchDevice) {
+                group.rotation.y = 0;
+                group.rotation.x = 0;
+            } else {
+                group.rotation.y = spinY + tilt.y;
+                group.rotation.x = tilt.x + Math.sin(t * 0.4) * 0.04;
+            }
 
             // Drive the per-bar reveal until every bar has settled
             if (appearStart != null) {
