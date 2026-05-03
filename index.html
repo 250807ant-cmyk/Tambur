@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="ru" class="is-loading">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambur Records — Студия звукозаписи в Москве · Рэп / Хип-хоп</title>
+    <meta name="description" content="Tambur Records — студия звукозаписи в Москве с фокусом на рэп и хип-хоп. Запись, сведение, мастеринг. Работаем 24/7.">
+    <meta name="theme-color" content="#080808">
+
+    <!-- Open Graph (соц. шаринг) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tambur Records — Студия звукозаписи в Москве">
+    <meta property="og:description" content="Рэп / хип-хоп студия в Москве. Запись · Сведение · Мастеринг. 24/7.">
+    <meta property="og:image" content="assets/glass logo.png">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tambur Records — Студия звукозаписи в Москве">
+    <meta name="twitter:description" content="Рэп / хип-хоп студия в Москве. Запись · Сведение · Мастеринг. 24/7.">
+    <meta name="twitter:image" content="assets/glass logo.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="video" href="assets/hero.mp4" type="video/mp4">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+      }
+    }
+    </script>
+</head>
+<body class="landing-page is-loading">
+
+    <!-- Page loader bar — fixed full-width strip at the very bottom of the
+         viewport (independent of scroll, like the nav). Visible while body
+         has .is-loading; fills 0→100% over the intro sequence. -->
+    <div class="hero-loader" aria-hidden="true">
+        <div class="hero-loader-fill"></div>
+    </div>
+
+    <!-- Custom cursor (desktop only — disabled on touch via CSS) -->
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
+
+    <!-- SVG filters: vertical (Y-only) gaussian blur for the services wheel -->
+    <svg id="svc-svg-defs" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs></defs></svg>
+
+    <!-- ══════════════════════ NAV ══════════════════════ -->
+    <nav class="l-nav" id="l-nav">
+        <div class="l-nav-inner">
+            <a href="#" class="l-nav-logo">TAMBUR<span>RECORDS</span></a>
+            <div class="l-nav-links">
+                <a href="#instudio-section">Студия</a>
+                <a href="#services-section">Услуги</a>
+                <a href="#artists-section">Артисты</a>
+                <a href="#tracks-section">Работы</a>
+                <a href="#booking-section">Контакт</a>
+            </div>
+            <a href="#booking-section" class="l-nav-cta" data-magnetic>Записаться</a>
+            <button class="l-nav-burger" id="l-nav-burger" aria-label="Открыть меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="l-nav-drawer" id="l-nav-drawer" aria-hidden="true">
+        <a href="#instudio-section" class="l-nav-drawer-link"><span class="l-nav-drawer-num">01</span>Студия</a>
+        <a href="#services-section" class="l-nav-drawer-link"><span class="l-nav-drawer-num">02</span>Услуги</a>
+        <a href="#artists-section"  class="l-nav-drawer-link"><span class="l-nav-drawer-num">03</span>Артисты</a>
+        <a href="#tracks-section"   class="l-nav-drawer-link"><span class="l-nav-drawer-num">04</span>Работы</a>
+        <a href="#booking-section"  class="l-nav-drawer-link"><span class="l-nav-drawer-num">05</span>Контакт</a>
+        <a href="#booking-section"  class="l-nav-drawer-cta">Записаться</a>
+    </div>
+    <div class="l-nav-backdrop" id="l-nav-backdrop" aria-hidden="true"></div>
+
+    <!-- ══════════════════════ HERO ══════════════════════ -->
+    <section class="l-hero" id="hero">
+        <div class="l-hero-bg">
+            <video src="assets/hero.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Tambur Records Studio"></video>
+        </div>
+        <div class="l-hero-overlay"></div>
+
+        <!-- Intro logo — big frosted-glass equalizer over the video; visible only during .is-loading -->
+        <div class="hero-intro-logo" aria-hidden="true">
+            <span class="hero-intro-bar"></span>
+            <span class="hero-intro-bar"></span>
+            <span class="hero-intro-bar"></span>
+            <span class="hero-intro-bar"></span>
+            <span class="hero-intro-bar"></span>
+        </div>
+
+        <div class="l-hero-inner">
+            <div class="l-hero-top">
+                <div class="l-hero-badge">
+                    <span class="l-rec-dot"></span>
+                    <span class="eq-bars" aria-hidden="true">
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                        <span class="eq-bar"></span>
+                    </span>
+                    <span>СТУДИЯ СВОБОДНА · МОСКВА</span>
+                </div>
+            </div>
+
+            <h1 class="l-hero-title">
+                <span class="hero-line-mask"><span class="glitch-line" data-text="ЗВУК,">ЗВУК,</span></span>
+                <span class="hero-line-mask"><span class="glitch-line" data-text="КОТОРЫЙ">КОТОРЫЙ</span></span>
+                <span class="hero-line-mask"><span class="glitch-line" data-text="ОСТАЁТСЯ.">ОСТАЁТСЯ.</span></span>
+            </h1>
+
+            <div class="l-hero-bottom">
+                <p class="l-hero-sub">
+                    Профессиональная студия<br>
+                    звукозаписи в Москве.<br>
+                    Запись · Сведение · Мастеринг<br>
+                    <strong>24 / 7</strong>
+                </p>
+                <div class="l-hero-actions">
+                    <a href="#booking-section" class="l-btn l-btn-solid" data-magnetic>Записаться на сессию</a>
+                    <a href="#instudio-section" class="l-btn l-btn-ghost" data-magnetic>Смотреть студию ↓</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#instudio-section" class="hero-scroll-cue" aria-label="Скроллить вниз">
+            <span class="hero-scroll-cue-label">SCROLL</span>
+            <span class="hero-scroll-cue-track"><span class="hero-scroll-cue-dot"></span></span>
+        </a>
+
+        <div class="l-hero-stats">
+            <div class="l-stats-inner">
+                <div class="l-stat">
+                    <span class="l-stat-num" data-target="200+">200+</span>
+                    <span class="l-stat-label">Треков</span>
+                </div>
+                <div class="l-stat-line"></div>
+                <div class="l-stat">
+                    <span class="l-stat-num" data-target="7">7</span>
+                    <span class="l-stat-label">Лет работы</span>
+                </div>
+                <div class="l-stat-line"></div>
+                <div class="l-stat">
+                    <span class="l-stat-num" data-target="3">3</span>
+                    <span class="l-stat-label">Зала</span>
+                </div>
+                <div class="l-stat-line"></div>
+                <div class="l-stat">
+                    <span class="l-stat-num" data-target="60+">60+</span>
+                    <span class="l-stat-label">Артистов</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════ IN STUDIO ══════════════════════ -->
+    <section class="l-section" id="instudio-section">
+        <div class="l-container">
+            <div class="l-section-head">
+                <span class="l-section-num">01</span>
+                <div>
+                    <h2 class="l-section-title reveal-mask"><span class="reveal-inner">В студии</span></h2>
+                    <p class="l-section-desc fade-up">Исследуй пространство — нажимай на точки, чтобы узнать о залах, оборудовании и команде</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive tour block (embedded from instudio.html) -->
+        <div class="l-container l-tour-wrap">
+            <div class="main-content instudio-embed" id="main-content-tour">
+                <div class="interactive-container">
+
+                    <!-- Top-left Back Button -->
+                    <div class="btn-back-corner" id="about-back-top-left-container">
+                        <div class="expand-btn hotspot" id="about-back-top-left">
+                            <div class="icon"><div class="chevron left"></div></div>
+                            <div class="text">Назад</div>
+                        </div>
+                    </div>
+
+                    <!-- CENTER: MAIN STUDIO -->
+                    <div class="image-layer active" id="layer-center">
+                        <img src="assets/центральная.webp" alt="Main Studio View" decoding="async">
+                        <div class="expand-btn hotspot hotspot-top" data-target="layer-top">
+                            <div class="icon"><div class="chevron up"></div></div>
+                            <div class="text">Оборудование</div>
+                        </div>
+                        <div class="expand-btn hotspot hotspot-left" data-target="layer-left">
+                            <div class="icon"><div class="chevron left"></div></div>
+                            <div class="text">Услуги</div>
+                        </div>
+                        <div class="expand-btn hotspot hotspot-right" data-target="layer-right">
+                            <div class="icon"><div class="chevron right"></div></div>
+                            <div class="text">О студии</div>
+                        </div>
+                        <div class="hotspot-plus hotspot hotspot-split" style="left: 51.5%; top: 78%;" data-split="who-we-are">
+                            <div class="icon">+</div>
+                            <div class="text">Кто мы</div>
+                        </div>
+                    </div>
+
+                    <!-- TOP: EQUIP & TEAM -->
+                    <div class="image-layer" id="layer-top">
+                        <img src="assets/верх.webp" alt="Equipment View" loading="lazy" decoding="async">
+                        <div class="hotspot-plus hotspot hotspot-split" style="left: 38%; top: 42%;" data-split="equipment">
+                            <div class="icon">+</div>
+                            <div class="text">Оборудование</div>
+                        </div>
+                        <div class="hotspot-plus hotspot hotspot-split" style="left: 62%; top: 42%;" data-split="team">
+                            <div class="icon">+</div>
+                            <div class="text">Команда</div>
+                        </div>
+                        <div class="expand-btn hotspot hotspot-center-top" data-target="layer-center">
+                            <div class="icon"><div class="chevron down"></div></div>
+                            <div class="text">Назад к пульту</div>
+                        </div>
+                    </div>
+
+                    <!-- LEFT: SERVICES -->
+                    <div class="image-layer" id="layer-left">
+                        <img src="assets/левая.webp" alt="Services View" loading="lazy" decoding="async">
+
+                        <div class="hotspot-plus hotspot hotspot-split" style="left: 57%; top: 38%;" data-split="session-vibe">
+                            <div class="icon">+</div>
+                            <div class="text">Сессия</div>
+                        </div>
+
+                        <div class="expand-btn hotspot hotspot-center-left" data-target="layer-center">
+                            <div class="icon"><div class="chevron right"></div></div>
+                            <div class="text">Назад</div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: ABOUT & PROJECTS -->
+                    <div class="image-layer" id="layer-right">
+                        <img src="assets/правая.webp" alt="About Studio View" loading="lazy" decoding="async">
+                        <div class="expand-btn hotspot hotspot-center-right" data-target="layer-center">
+                            <div class="icon"><div class="chevron left"></div></div>
+                            <div class="text">Назад</div>
+                        </div>
+                        <div class="hotspot-plus hotspot hotspot-split" style="left: 45%; top: 52%;" data-split="about-studio">
+                            <div class="icon">+</div>
+                            <div class="text">О студии</div>
+                        </div>
+                        <div class="hotspot-plus hotspot hotspot-split" style="left: 76%; top: 58%;" data-split="our-projects">
+                            <div class="icon">+</div>
+                            <div class="text">Наши проекты</div>
+                        </div>
+                    </div>
+
+                    <!-- Info panel -->
+                    <div class="about-section">
+                        <div class="about-tabs-container"></div>
+                        <div class="about-content">
+                            <span class="about-tag" id="about-tag">Студия</span>
+                            <h2 id="about-title">О студии</h2>
+                            <hr class="about-divider">
+                            <p id="about-description">Загрузка...</p>
+                            <div class="about-meta" id="about-meta"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════ SERVICES ══════════════════════ -->
+    <section class="l-section l-services-section" id="services-section">
+        <div class="svc-scroll-track">
+            <div class="svc-scroll-sticky">
+                <div class="svc-grid">
+                    <!-- Left column: heading + active service detail -->
+                    <div class="svc-info">
+                        <span class="svc-info-num">02</span>
+                        <h2 class="svc-info-title">Услуги</h2>
+                        <p class="svc-info-lead">Полный цикл производства — от первой ноты до дистрибуции</p>
+                        <div class="svc-info-divider"></div>
+                        <span class="svc-info-counter" id="svc-counter">01 / 07</span>
+                        <span class="svc-info-tags"  id="svc-meta-tags"></span>
+                        <span class="svc-info-price" id="svc-meta-price"></span>
+                    </div>
+
+                    <!-- Right column: vertical wheel-picker -->
+                    <div class="svc-wheel">
+                        <ul class="svc-wheel-list">
+                            <li class="svc-wheel-item" data-tags="3 зала · 24/7"          data-price="от 3 000 ₽/час">Запись</li>
+                            <li class="svc-wheel-item" data-tags="Stereo · Stem"          data-price="от 2 000 ₽">Сведение</li>
+                            <li class="svc-wheel-item" data-tags="24-bit · 96 kHz"        data-price="от 1 500 ₽">Мастеринг</li>
+                            <li class="svc-wheel-item" data-tags="Эксклюзив · Лицензия"   data-price="от 5 000 ₽">Битмейкинг</li>
+                            <li class="svc-wheel-item" data-tags="Живые инструменты"      data-price="от 4 000 ₽">Аранжировка</li>
+                            <li class="svc-wheel-item" data-tags="Полный цикл"            data-price="от 15 000 ₽">Продакшн</li>
+                            <li class="svc-wheel-item" data-tags="Все площадки · Digital" data-price="от 2 000 ₽">Дистрибуция</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════ ARTISTS ══════════════════════ -->
+    <section class="l-section" id="artists-section">
+        <div class="l-container">
+            <div class="l-section-head">
+                <span class="l-section-num">02</span>
+                <div>
+                    <h2 class="l-section-title reveal-mask"><span class="reveal-inner">Артисты</span></h2>
+                    <p class="l-section-desc fade-up">Среди наших гостей — имена, которые знает вся страна</p>
+                </div>
+            </div>
+
+            <div class="l-artists-grid">
+                <div class="l-artist-card fade-up" data-tilt>
+                    <div class="l-artist-card-inner">
+                        <img src="assets/rap 1.jpg" alt="Big Baby Tape" style="object-position: center 40%;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="l-artist-info-tilt">
+                        <div class="l-artist-info">
+                            <span class="l-artist-name">Big Baby Tape</span>
+                            <span class="l-artist-sub">Записал альбом у нас</span>
+                        </div>
+                    </div>
+                    <div class="l-artist-card-edge" aria-hidden="true"></div>
+                </div>
+                <div class="l-artist-card fade-up" data-tilt>
+                    <div class="l-artist-card-inner">
+                        <img src="assets/rap 2.jpg" alt="Feduk" style="object-position: center 40%;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="l-artist-info-tilt">
+                        <div class="l-artist-info">
+                            <span class="l-artist-name">Feduk</span>
+                            <span class="l-artist-sub">Частый гость студии</span>
+                        </div>
+                    </div>
+                    <div class="l-artist-card-edge" aria-hidden="true"></div>
+                </div>
+                <div class="l-artist-card fade-up" data-tilt>
+                    <div class="l-artist-card-inner">
+                        <img src="assets/rap 3.jpg" alt="Rocket" style="object-position: center 10%;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="l-artist-info-tilt">
+                        <div class="l-artist-info">
+                            <span class="l-artist-name">Rocket</span>
+                            <span class="l-artist-sub">Резидент Tambur Records</span>
+                        </div>
+                    </div>
+                    <div class="l-artist-card-edge" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════ TRACKS ══════════════════════ -->
+    <section class="l-section l-tracks-section" id="tracks-section">
+        <!-- Blurred image background -->
+        <div class="trk-bg-wrap">
+            <img class="trk-bg-img" id="trk-bg-img" src="assets/I Got - JABO, OG Buda.png" alt="">
+        </div>
+        <div class="l-container trk-z">
+            <div class="l-section-head">
+                <span class="l-section-num">03</span>
+                <div>
+                    <h2 class="l-section-title reveal-mask"><span class="reveal-inner">Наши работы</span></h2>
+                    <p class="l-section-desc fade-up">Слушайте треки, записанные и сведённые в Tambur Records</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Fan Carousel -->
+        <div class="trk-stage" id="trk-stage">
+            <div class="trk-glow" id="trk-glow"></div>
+            <div class="trk-deck" id="trk-deck">
+                <div class="trk-card" data-index="0">
+                    <img class="trk-card-img" loading="lazy" decoding="async" src="assets/AMELYA - Танцы.jpeg" alt="Танцы">
+                    <div class="trk-card-shine"></div>
+                    <div class="trk-card-info">
+                        <span class="trk-card-title">Танцы</span>
+                        <span class="trk-card-artist">AMELYA</span>
+                    </div>
+                </div>
+                <div class="trk-card" data-index="1">
+                    <img class="trk-card-img" loading="lazy" decoding="async" src="assets/Broke Day - Big Baby Tape.png" alt="Broke Day">
+                    <div class="trk-card-shine"></div>
+                    <div class="trk-card-info">
+                        <span class="trk-card-title">Broke Day</span>
+                        <span class="trk-card-artist">Big Baby Tape</span>
+                    </div>
+                </div>
+                <div class="trk-card" data-index="2">
+                    <img class="trk-card-img" loading="lazy" decoding="async" src="assets/I Got - JABO, OG Buda.png" alt="I Got">
+                    <div class="trk-card-shine"></div>
+                    <div class="trk-card-info">
+                        <span class="trk-card-title">I Got</span>
+                        <span class="trk-card-artist">JABO, OG Buda</span>
+                    </div>
+                </div>
+                <div class="trk-card" data-index="3">
+                    <img class="trk-card-img" loading="lazy" decoding="async" src="assets/Федуr - Паша Техник (Pasha Technique), MATXX & Candy Flip Boy.png" alt="Candy Flip Boy">
+                    <div class="trk-card-shine"></div>
+                    <div class="trk-card-info">
+                        <span class="trk-card-title">Candy Flip Boy</span>
+                        <span class="trk-card-artist">Pasha Technique, MATXX, Feduk</span>
+                    </div>
+                </div>
+                <div class="trk-card" data-index="4">
+                    <img class="trk-card-img" loading="lazy" decoding="async" src="assets/feduk_ya_xochu_letat.png" alt="Я хочу летать">
+                    <div class="trk-card-shine"></div>
+                    <div class="trk-card-info">
+                        <span class="trk-card-title">Я хочу летать</span>
+                        <span class="trk-card-artist">Feduk</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Bar -->
+        <div class="l-container trk-z">
+            <div class="trk-player" id="trk-player">
+                <div class="trk-player-controls">
+                    <button class="trk-ctrl-btn" id="trk-prev" aria-label="Назад">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+                    </button>
+                    <button class="trk-ctrl-btn trk-play-btn" id="trk-play" aria-label="Воспроизвести">
+                        <svg class="trk-icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg class="trk-icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <button class="trk-ctrl-btn" id="trk-next" aria-label="Следующий">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2.5-6 5.5 4V8z"/><path d="M16 6h2v12h-2z"/></svg>
+                    </button>
+                </div>
+                <div class="trk-player-sep"></div>
+                <div class="trk-player-track">
+                    <img class="trk-player-thumb" id="trk-thumb" src="assets/I Got - JABO, OG Buda.png" alt="">
+                    <div class="trk-player-meta">
+                        <span class="trk-player-name" id="trk-player-name">I Got</span>
+                        <span class="trk-player-sub" id="trk-player-sub">JABO, OG Buda</span>
+                    </div>
+                </div>
+                <div class="trk-player-right">
+                    <button class="trk-ctrl-btn" aria-label="Ещё">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+                    </button>
+                    <button class="trk-ctrl-btn" aria-label="Очередь">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+                    </button>
+                    <div class="trk-volume" id="trk-volume">
+                        <button class="trk-ctrl-btn trk-vol-btn" id="trk-vol-btn" aria-label="Громкость" aria-expanded="false">
+                            <svg class="trk-vol-icon trk-vol-high" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            <svg class="trk-vol-icon trk-vol-low" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+                            <svg class="trk-vol-icon trk-vol-mute" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
+                        </button>
+                        <div class="trk-vol-pop" id="trk-vol-pop" role="presentation">
+                            <input type="range" min="0" max="100" step="1" value="80" class="trk-vol-slider" id="trk-vol-slider" aria-label="Уровень громкости">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════ BOOKING ══════════════════════ -->
+    <section class="l-section l-booking" id="booking-section">
+        <div class="l-container">
+            <!-- Real 3D glass logo rendered with Three.js (ExtrudeGeometry + MeshPhysicalMaterial) -->
+            <canvas class="bk-3d-canvas" id="bk-3d-canvas" aria-hidden="true"></canvas>
+
+            <span class="l-section-num l-booking-num">04</span>
+            <h2 class="l-booking-title">
+                <span class="reveal-mask"><span class="reveal-inner">Готов</span></span>
+                <span class="reveal-mask"><span class="reveal-inner">записаться?</span></span>
+            </h2>
+            <p class="l-booking-sub fade-up">Оставь заявку и мы свяжемся с тобой в течение часа</p>
+            <div class="l-booking-actions">
+                <a href="tel:+74951234567" class="l-btn l-btn-solid" data-magnetic>Позвонить</a>
+                <a href="https://t.me/tamburrecords" class="l-btn l-btn-ghost" data-magnetic>Telegram</a>
+            </div>
+            <p class="l-booking-address">Москва · Работаем 24/7</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ft-footer">
+        <div class="ft-inner">
+
+            <div class="ft-top">
+
+                <!-- Левая колонка: лого + навигация + контакты -->
+                <div class="ft-left">
+
+                    <div class="ft-brand-block">
+                        <a href="#" class="ft-logo">
+                            <img src="assets/glass logo.png" alt="" class="ft-logo-mark" aria-hidden="true">
+                            TAMBUR<span>RECORDS</span>
+                        </a>
+                        <p class="ft-tagline">Профессиональная звукозапись в Москве</p>
+                    </div>
+
+                    <div class="ft-section-block">
+                        <span class="ft-section-label">Навигация</span>
+                        <nav class="ft-nav">
+                            <a href="#"                 class="ft-link">Главная</a>
+                            <a href="#instudio-section" class="ft-link">Студия</a>
+                            <a href="#artists-section"  class="ft-link">Артисты</a>
+                            <a href="#services-section" class="ft-link">Услуги</a>
+                            <a href="#tracks-section"   class="ft-link">Треки</a>
+                            <a href="#booking-section"  class="ft-link">Записаться</a>
+                        </nav>
+                    </div>
+
+                    <div class="ft-section-block">
+                        <span class="ft-section-label">Контакты</span>
+                        <div class="ft-contacts">
+                            <a href="tel:+74951234567"           class="ft-link">+7 (495) 123-45-67</a>
+                            <a href="mailto:info@tambur.ru"      class="ft-link">info@tambur.ru</a>
+                            <a href="https://t.me/tamburrecords" class="ft-link">Telegram</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Правая колонка: карта -->
+                <div class="ft-map-col">
+                    <div class="ft-map-wrap">
+                        <iframe
+                            class="ft-map-frame"
+                            src="https://yandex.ru/map-widget/v1/?ll=37.5399%2C55.7632&z=17&pt=37.5399%2C55.7632%2Cpm2rdm&l=map&lang=ru_RU&theme=dark"
+                            allowfullscreen
+                            loading="lazy"
+                            title="Tambur Records на карте"
+                        ></iframe>
+                    </div>
+                    <p class="ft-address">
+                        <span class="ft-address-city">Москва</span>
+                        Стрельбищенский пер., 21
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="ft-bottom">
+                <span class="ft-copy">© 2026 Tambur Records · Москва · Работаем 24/7</span>
+                <a href="#" class="ft-copy ft-policy">Политика конфиденциальности</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Nav: появление фона при прокрутке
+        const nav = document.getElementById('l-nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 80);
+        }, { passive: true });
+
+        // ── Hero intro reveal ──────────────────────────────────
+        // Loading screen shows the video's first frame paused, with the
+        // intro logo + loader bar on top. The video kicks off VIDEO_LEAD_MS
+        // before the page reveals so by the time the loader finishes the
+        // video has played exactly that long (≈ 1.0 s mark on reveal).
+        (function () {
+            const body = document.body;
+            const heroVideo = document.querySelector('.l-hero-bg video');
+
+            const REVEAL_MS     = 2400;   // matches .hero-loader-fill animation
+            const VIDEO_LEAD_MS = 1000;   // video starts this long before reveal
+
+            function pauseAtFirstFrame() {
+                if (!heroVideo) return;
+                try {
+                    heroVideo.pause();
+                    heroVideo.currentTime = 0;
+                } catch (_) { /* metadata not ready yet — listener below picks it up */ }
+            }
+
+            function startVideo() {
+                if (!heroVideo) return;
+                // Make sure we start from the beginning, so reveal lands on
+                // currentTime ≈ VIDEO_LEAD_MS / 1000 (≈ 1.0 s).
+                try { heroVideo.currentTime = 0; } catch(_) {}
+                heroVideo.play().catch(() => { /* autoplay policy may block — non-fatal */ });
+            }
+
+            function start() {
+                // Re-arm: remove first (in case browser kept it after bfcache restore),
+                // force a reflow, then add the class fresh so the transition has
+                // a clean from→to sequence the engine can animate.
+                body.classList.remove('is-loading');
+                document.documentElement.classList.remove('is-loading');
+                void body.offsetWidth;                // force reflow
+                body.classList.add('is-loading');
+                document.documentElement.classList.add('is-loading');
+
+                pauseAtFirstFrame();
+                // Catch the case where metadata wasn't ready yet — pin to frame 0
+                // as soon as the browser has it.
+                if (heroVideo) {
+                    heroVideo.addEventListener('loadedmetadata', pauseAtFirstFrame, { once: true });
+                }
+
+                // Schedule via plain setTimeout (not rAF) so the sequence
+                // still progresses if the tab loads while hidden.
+                setTimeout(startVideo, Math.max(0, REVEAL_MS - VIDEO_LEAD_MS));
+                setTimeout(() => {
+                    body.classList.remove('is-loading');
+                    document.documentElement.classList.remove('is-loading');
+                }, REVEAL_MS);
+            }
+
+            // Run as soon as JS sees the body
+            start();
+
+            // Replay if the page is restored from back/forward cache
+            window.addEventListener('pageshow', (e) => {
+                if (e.persisted) start();
+            });
+        })();
+
+        // ── Custom cursor (dot + lagging ring) ─────────────────
+        (function () {
+            if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+            const dot  = document.getElementById('cursor-dot');
+            const ring = document.getElementById('cursor-ring');
+            if (!dot || !ring) return;
+
+            let tx = -100, ty = -100;
+            let rx = -100, ry = -100;
+            let isDown = false;
+
+            window.addEventListener('mousemove', e => {
+                tx = e.clientX;
+                ty = e.clientY;
+                dot.style.transform = `translate3d(${tx}px, ${ty}px, 0) translate(-50%, -50%)`;
+            }, { passive: true });
+
+            window.addEventListener('mousedown', () => {
+                isDown = true;
+                ring.classList.add('is-press');
+            });
+            window.addEventListener('mouseup', () => {
+                isDown = false;
+                ring.classList.remove('is-press');
+            });
+
+            (function tick() {
+                rx += (tx - rx) * 0.22;
+                ry += (ty - ry) * 0.22;
+                ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
+                requestAnimationFrame(tick);
+            })();
+
+            const hoverSel = 'a, button, [data-magnetic], .svc-row, .trk-card, .l-artist-card, .hotspot, .hotspot-plus';
+            document.querySelectorAll(hoverSel).forEach(el => {
+                el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
+                el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
+            });
+        })();
+
+        const _prefersReduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const _isFinePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+        // ── Mobile nav drawer (hamburger) ───────────────────────
+        (function () {
+            const burger   = document.getElementById('l-nav-burger');
+            const drawer   = document.getElementById('l-nav-drawer');
+            const backdrop = document.getElementById('l-nav-backdrop');
+            if (!burger || !drawer || !backdrop) return;
+            const links = drawer.querySelectorAll('a');
+
+            function setOpen(open) {
+                burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+                drawer.classList.toggle('is-open', open);
+                backdrop.classList.toggle('is-open', open);
+                document.body.classList.toggle('is-nav-open', open);
+            }
+
+            burger.addEventListener('click', () => {
+                setOpen(burger.getAttribute('aria-expanded') !== 'true');
+            });
+            backdrop.addEventListener('click', () => setOpen(false));
+            links.forEach(a => a.addEventListener('click', () => setOpen(false)));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') setOpen(false);
+            });
+        })();
+
+        // ── Magnetic buttons ─────────────────────────────────────
+        (function () {
+            if (!_isFinePointer) return;
+            document.querySelectorAll('[data-magnetic]').forEach(el => {
+                let raf = null;
+                el.addEventListener('mousemove', e => {
+                    const r = el.getBoundingClientRect();
+                    const cx = r.left + r.width / 2;
+                    const cy = r.top + r.height / 2;
+                    const dx = (e.clientX - cx) * 0.32;
+                    const dy = (e.clientY - cy) * 0.55;
+                    cancelAnimationFrame(raf);
+                    raf = requestAnimationFrame(() => {
+                        el.classList.add('is-magnet-active');
+                        el.style.transform = `translate(${dx}px, ${dy}px)`;
+                    });
+                });
+                el.addEventListener('mouseleave', () => {
+                    cancelAnimationFrame(raf);
+                    el.classList.remove('is-magnet-active');
+                    el.style.transform = '';
+                });
+            });
+        })();
+
+        // ── 3D tilt for artist photos (overlay/info stay flat) ──
+        (function () {
+            if (!_isFinePointer) return;
+            document.querySelectorAll('[data-tilt]').forEach(card => {
+                let raf = null;
+                card.addEventListener('mousemove', e => {
+                    const r = card.getBoundingClientRect();
+                    const x = (e.clientX - r.left) / r.width;
+                    const y = (e.clientY - r.top) / r.height;
+                    const ry = (x - 0.5) * 12;
+                    const rx = (0.5 - y) * 10;
+                    cancelAnimationFrame(raf);
+                    raf = requestAnimationFrame(() => {
+                        card.classList.add('is-tilting');
+                        card.style.setProperty('--rx', ry + 'deg');
+                        card.style.setProperty('--ry', rx + 'deg');
+                    });
+                });
+                card.addEventListener('mouseleave', () => {
+                    cancelAnimationFrame(raf);
+                    card.classList.remove('is-tilting');
+                    card.style.setProperty('--rx', '0deg');
+                    card.style.setProperty('--ry', '0deg');
+                });
+            });
+        })();
+
+        // ── Hero parallax (mouse) ───────────────────────────────
+        (function () {
+            if (!_isFinePointer || _prefersReduce) return;
+            const hero = document.querySelector('.l-hero');
+            const bg   = document.querySelector('.l-hero-bg');
+            const inner = document.querySelector('.l-hero-inner');
+            if (!hero || !bg) return;
+            hero.addEventListener('mousemove', e => {
+                const r = hero.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                hero.classList.add('is-parallax');
+                bg.style.transform = `translate3d(${x * -28}px, ${y * -22}px, 0) scale(1.04)`;
+                if (inner) inner.style.transform = `translate3d(${x * 14}px, ${y * 10}px, 0)`;
+            });
+            hero.addEventListener('mouseleave', () => {
+                hero.classList.remove('is-parallax');
+                bg.style.transform = '';
+                if (inner) inner.style.transform = '';
+            });
+        })();
+
+        // ── Audio-reactive equalizer bars in hero badge ─────────
+        (function () {
+            const bars  = Array.from(document.querySelectorAll('.eq-bar'));
+            const wrap  = document.querySelector('.eq-bars');
+            if (!bars.length || !wrap) return;
+            const Ctx   = window.AudioContext || window.webkitAudioContext;
+            if (!Ctx) return;
+
+            let audioCtx = null;
+            let analyser = null;
+            let connected = false;
+            let raf = null;
+            let buf = null;
+
+            function ensureGraph() {
+                const audio = window.__tamburAudio;
+                if (!audio || connected) return audio;
+                try {
+                    if (!audioCtx) audioCtx = new Ctx();
+                    if (!analyser) {
+                        analyser = audioCtx.createAnalyser();
+                        analyser.fftSize = 64;
+                        analyser.smoothingTimeConstant = 0.72;
+                        buf = new Uint8Array(analyser.frequencyBinCount);
+                    }
+                    const src = audioCtx.createMediaElementSource(audio);
+                    src.connect(analyser);
+                    analyser.connect(audioCtx.destination);
+                    connected = true;
+                } catch (e) { /* already connected somewhere — ignore */ }
+                return audio;
+            }
+
+            function tick() {
+                const audio = window.__tamburAudio;
+                if (!audio || audio.paused || !analyser || !buf) {
+                    wrap.classList.remove('is-live');
+                    bars.forEach(b => { b.style.transform = ''; });
+                    raf = null;
+                    return;
+                }
+                analyser.getByteFrequencyData(buf);
+                wrap.classList.add('is-live');
+                // Map a small range of low/mid bins to the 7 bars
+                const slots = [1, 2, 3, 5, 7, 10, 14];
+                bars.forEach((bar, i) => {
+                    const v = (buf[slots[i]] || 0) / 255;
+                    const sy = 0.18 + v * 0.95;
+                    bar.style.transform = `scaleY(${sy.toFixed(3)})`;
+                });
+                raf = requestAnimationFrame(tick);
+            }
+
+            function start() {
+                const audio = ensureGraph();
+                if (!audio) return;
+                if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+                if (raf == null) raf = requestAnimationFrame(tick);
+            }
+
+            function poll() {
+                const audio = window.__tamburAudio;
+                if (!audio) { setTimeout(poll, 200); return; }
+                audio.addEventListener('play',  start);
+                audio.addEventListener('pause', () => {
+                    cancelAnimationFrame(raf); raf = null;
+                    wrap.classList.remove('is-live');
+                    bars.forEach(b => { b.style.transform = ''; });
+                });
+            }
+            poll();
+        })();
+
+        // ── Slot-machine counter for hero stats ─────────────────
+        (function () {
+            const targets = document.querySelectorAll('.l-stat-num[data-target]');
+            if (!targets.length) return;
+
+            targets.forEach(el => {
+                const raw = el.getAttribute('data-target');
+                const m = raw.match(/^(\d+)(.*)$/);
+                if (!m) return;
+                const num = m[1];
+                const suffix = m[2];
+                el.classList.add('is-slot');
+                el.innerHTML = '';
+                for (const ch of num) {
+                    const final = parseInt(ch, 10);
+                    const dWrap = document.createElement('span');
+                    dWrap.className = 'slot-digit';
+                    const track = document.createElement('span');
+                    track.className = 'slot-digit-track';
+                    track.dataset.final = final;
+                    for (let i = 0; i <= final; i++) {
+                        const d = document.createElement('span');
+                        d.textContent = i;
+                        track.appendChild(d);
+                    }
+                    dWrap.appendChild(track);
+                    el.appendChild(dWrap);
+                }
+                if (suffix) {
+                    const s = document.createElement('span');
+                    s.className = 'slot-suffix';
+                    s.textContent = suffix;
+                    el.appendChild(s);
+                }
+            });
+
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    const el = e.target;
+                    const tracks = el.querySelectorAll('.slot-digit-track');
+                    tracks.forEach((track, i) => {
+                        const final = parseInt(track.dataset.final, 10);
+                        setTimeout(() => {
+                            track.style.transform = `translateY(-${final}em)`;
+                        }, i * 110 + 200);
+                    });
+                    setTimeout(() => el.classList.add('is-revealed'), 400);
+                    io.unobserve(el);
+                });
+            }, { threshold: 0.55 });
+
+            targets.forEach(el => io.observe(el));
+        })();
+
+        // ── Section title reveal ────────────────────────────────
+        (function () {
+            const targets = document.querySelectorAll('.reveal-mask, .fade-up');
+            if (!targets.length) return;
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('in-view');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+            targets.forEach(el => io.observe(el));
+        })();
+
+        // ── Services wheel (scroll-driven, direct mapping, perspective scale + blur) ──
+        (function () {
+            const wheel = document.querySelector('.svc-wheel');
+            const track = document.querySelector('.svc-scroll-track');
+            if (!wheel || !track) return;
+            const list  = wheel.querySelector('.svc-wheel-list');
+            const items = Array.from(wheel.querySelectorAll('.svc-wheel-item'));
+            const tagsEl    = document.getElementById('svc-meta-tags');
+            const priceEl   = document.getElementById('svc-meta-price');
+            const counterEl = document.getElementById('svc-counter');
+
+            const N = items.length;
+            let itemH = items[0].offsetHeight || 70;
+            let lastNearest = -1;
+            const pad = (n) => n < 10 ? '0' + n : '' + n;
+
+            // Pre-generate vertical (Y-only) gaussian-blur SVG filters once.
+            // CSS `filter: blur()` is round; this gives a directional motion-blur look
+            // where text is smeared along the scroll direction.
+            const SVG_NS = 'http://www.w3.org/2000/svg';
+            const BLUR_STEPS = 30;
+            const defs = document.querySelector('#svc-svg-defs defs');
+            if (defs && defs.children.length === 0) {
+                for (let i = 0; i <= BLUR_STEPS; i++) {
+                    const f = document.createElementNS(SVG_NS, 'filter');
+                    f.setAttribute('id', `svc-vb-${i}`);
+                    f.setAttribute('x', '-30%');
+                    f.setAttribute('y', '-200%');
+                    f.setAttribute('width', '160%');
+                    f.setAttribute('height', '500%');
+                    const g = document.createElementNS(SVG_NS, 'feGaussianBlur');
+                    g.setAttribute('stdDeviation', `0 ${i}`);
+                    f.appendChild(g);
+                    defs.appendChild(f);
+                }
+            }
+
+            function applyOffset(o) {
+                list.style.transform = `translate3d(0, ${-(o + itemH / 2)}px, 0)`;
+                items.forEach((item, i) => {
+                    const d = Math.abs(i * itemH - o) / itemH;
+                    // Anisotropic Y-only blur (motion-blur look) via SVG filter
+                    const blurY  = Math.min(BLUR_STEPS, Math.pow(d, 1.35) * 3.8);
+                    const level  = Math.round(blurY);
+                    const opacity = Math.max(0.06, 1 - d * 0.32);
+                    const scale   = Math.max(0.78, 1 - d * 0.045);
+
+                    item.style.transform = `scale(${scale.toFixed(3)})`;
+                    item.style.filter    = level === 0 ? 'none' : `url(#svc-vb-${level})`;
+                    item.style.opacity   = opacity.toFixed(3);
+                    item.style.textShadow = 'none';
+                });
+                const idx = Math.max(0, Math.min(N - 1, Math.round(o / itemH)));
+                if (idx !== lastNearest) {
+                    lastNearest = idx;
+                    const t = items[idx];
+                    if (tagsEl)    tagsEl.textContent    = t.dataset.tags  || '';
+                    if (priceEl)   priceEl.textContent   = t.dataset.price || '';
+                    if (counterEl) counterEl.textContent = pad(idx + 1) + ' / ' + pad(N);
+                }
+            }
+
+            // Direct scroll → offset mapping, no velocity / no motion-blur, no stretch.
+            // The animation reads exactly what scroll says — no janky lag, no overshoot.
+            let scheduled = false;
+            function update() {
+                scheduled = false;
+                const r = track.getBoundingClientRect();
+                const scrollableH = track.offsetHeight - window.innerHeight;
+                if (scrollableH <= 0) { applyOffset(0); return; }
+                const scrolled = -r.top;
+                const progress = Math.max(0, Math.min(1, scrolled / scrollableH));
+                applyOffset(progress * (N - 1) * itemH);
+            }
+
+            function onScroll() {
+                if (scheduled) return;
+                scheduled = true;
+                requestAnimationFrame(update);
+            }
+
+            function recompute() {
+                itemH = items[0].offsetHeight || itemH;
+                update();
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', recompute);
+            recompute();
+        })();
+
+
+
+        // ── Tracks Player ───────────────────────────────────────
+        (function () {
+            const tracks = [
+                {
+                    title:  'Танцы',
+                    artist: 'AMELYA',
+                    cover:  'assets/AMELYA - Танцы.jpeg',
+                    src:    'works/AMELYA - Танцы.mp3',
+                    color:  '#C85010',
+                },
+                {
+                    title:  'Broke Day',
+                    artist: 'Big Baby Tape',
+                    cover:  'assets/Broke Day - Big Baby Tape.png',
+                    src:    'works/Big Baby Tape - Broke Day (pesni.fm).mp3',
+                    color:  '#1A4878',
+                },
+                {
+                    title:  'I Got',
+                    artist: 'JABO, OG Buda',
+                    cover:  'assets/I Got - JABO, OG Buda.png',
+                    src:    'works/JABO, OG Buda - I Got.mp3',
+                    color:  '#9C7818',
+                },
+                {
+                    title:  'Candy Flip Boy',
+                    artist: 'Pasha Technique, MATXX, Feduk',
+                    cover:  'assets/Федуr - Паша Техник (Pasha Technique), MATXX & Candy Flip Boy.png',
+                    src:    'works/Pasha_Tehnik_MATXX_Candy_Flip_Boy_Feduk.mp3',
+                    color:  '#601878',
+                },
+                {
+                    title:  'Я хочу летать',
+                    artist: 'Feduk',
+                    cover:  'assets/feduk_ya_xochu_letat.png',
+                    src:    'works/feduk_ya_xochu_letat.mp3',
+                    color:  '#7A5030',
+                },
+            ];
+
+            const cards    = document.querySelectorAll('.trk-card');
+            const glow     = document.getElementById('trk-glow');
+            const bgImg    = document.getElementById('trk-bg-img');
+            const thumb    = document.getElementById('trk-thumb');
+            const pName    = document.getElementById('trk-player-name');
+            const pSub     = document.getElementById('trk-player-sub');
+            const playBtn  = document.getElementById('trk-play');
+            const prevBtn  = document.getElementById('trk-prev');
+            const nextBtn  = document.getElementById('trk-next');
+            const iPlay    = playBtn ? playBtn.querySelector('.trk-icon-play')  : null;
+            const iPause   = playBtn ? playBtn.querySelector('.trk-icon-pause') : null;
+
+            if (!cards.length) return;
+
+            const audio = new Audio();
+            audio.preload = 'none';
+            // Expose for cross-IIFE consumers (audio-reactive eq bars)
+            window.__tamburAudio = audio;
+
+            let current = 2;
+            let loadedFor = -1;
+
+            function syncPlayIcon() {
+                const isPlaying = !audio.paused && !audio.ended;
+                if (iPlay)  iPlay.style.display  = isPlaying ? 'none' : '';
+                if (iPause) iPause.style.display = isPlaying ? ''     : 'none';
+            }
+
+            function loadCurrent() {
+                const t = tracks[current];
+                if (loadedFor !== current) {
+                    audio.src = encodeURI(t.src);
+                    loadedFor = current;
+                }
+            }
+
+            function render() {
+                const t = tracks[current];
+                const len = tracks.length;
+                cards.forEach((card, i) => {
+                    let pos = i - current;
+                    if (pos > len / 2)  pos -= len;
+                    if (pos < -len / 2) pos += len;
+                    pos = Math.max(-3, Math.min(3, pos));
+                    card.setAttribute('data-pos', pos);
+                });
+                if (glow)  glow.style.background = t.color;
+                if (thumb) thumb.src = t.cover;
+                if (bgImg) {
+                    bgImg.style.opacity = '0';
+                    setTimeout(() => {
+                        bgImg.src = t.cover;
+                        bgImg.onload = () => { bgImg.style.opacity = '0.32'; };
+                    }, 250);
+                }
+                if (pName) pName.textContent = t.title;
+                if (pSub)  pSub.textContent  = t.artist;
+            }
+
+            function goTo(i, opts) {
+                const len = tracks.length;
+                current = ((i % len) + len) % len;
+                const wasPlaying = !audio.paused && !audio.ended;
+                render();
+                if (wasPlaying || (opts && opts.autoplay)) {
+                    loadCurrent();
+                    audio.currentTime = 0;
+                    audio.play().catch(() => {});
+                }
+            }
+
+            cards.forEach((card, i) => {
+                card.addEventListener('click', () => {
+                    if (parseInt(card.getAttribute('data-pos')) !== 0) {
+                        goTo(i);
+                    } else {
+                        // active card click → play/pause toggle
+                        loadCurrent();
+                        if (audio.paused) audio.play().catch(() => {});
+                        else audio.pause();
+                    }
+                });
+            });
+
+            if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+            if (playBtn) {
+                playBtn.addEventListener('click', () => {
+                    loadCurrent();
+                    if (audio.paused) audio.play().catch(() => {});
+                    else audio.pause();
+                });
+            }
+
+            audio.addEventListener('play',  syncPlayIcon);
+            audio.addEventListener('pause', syncPlayIcon);
+            audio.addEventListener('ended', () => goTo(current + 1, { autoplay: true }));
+
+            // ── Volume control ─────────────────────────────────
+            const volWrap   = document.getElementById('trk-volume');
+            const volBtn    = document.getElementById('trk-vol-btn');
+            const volSlider = document.getElementById('trk-vol-slider');
+            const iVolHigh  = volBtn ? volBtn.querySelector('.trk-vol-high') : null;
+            const iVolLow   = volBtn ? volBtn.querySelector('.trk-vol-low')  : null;
+            const iVolMute  = volBtn ? volBtn.querySelector('.trk-vol-mute') : null;
+
+            const VOL_KEY = 'tambur:volume';
+
+            function setVolIcon(v) {
+                const showMute = v <= 0.001;
+                const showLow  = !showMute && v < 0.5;
+                const showHigh = !showMute && !showLow;
+                if (iVolMute) iVolMute.style.display = showMute ? '' : 'none';
+                if (iVolLow)  iVolLow.style.display  = showLow  ? '' : 'none';
+                if (iVolHigh) iVolHigh.style.display = showHigh ? '' : 'none';
+            }
+
+            function applyVolume(v) {
+                v = Math.max(0, Math.min(1, v));
+                audio.volume = v;
+                if (volSlider) {
+                    volSlider.value = Math.round(v * 100);
+                    volSlider.style.setProperty('--vol', (v * 100) + '%');
+                }
+                setVolIcon(v);
+                try { localStorage.setItem(VOL_KEY, String(v)); } catch(_) {}
+            }
+
+            // Restore saved volume (default 0.8)
+            let initialVol = 0.8;
+            try {
+                const saved = parseFloat(localStorage.getItem(VOL_KEY));
+                if (!Number.isNaN(saved)) initialVol = saved;
+            } catch(_) {}
+            applyVolume(initialVol);
+
+            if (volSlider) {
+                volSlider.addEventListener('input', () => {
+                    applyVolume(volSlider.value / 100);
+                });
+            }
+
+            if (volBtn && volWrap) {
+                const supportsHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+                let savedVol = audio.volume > 0 ? audio.volume : 0.6;
+
+                volBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (supportsHover) {
+                        // Desktop: slider auto-shows on hover, so click = mute toggle
+                        if (audio.volume > 0) {
+                            savedVol = audio.volume;
+                            applyVolume(0);
+                        } else {
+                            applyVolume(savedVol > 0.05 ? savedVol : 0.6);
+                        }
+                    } else {
+                        // Touch: no hover, so click reveals/hides the slider
+                        const open = volWrap.classList.toggle('is-open');
+                        volBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    }
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!volWrap.contains(e.target)) {
+                        volWrap.classList.remove('is-open');
+                        volBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && volWrap.classList.contains('is-open')) {
+                        volWrap.classList.remove('is-open');
+                        volBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            render();
+            syncPlayIcon();
+        })();
+
+        // Плавный скролл по якорям
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const id = a.getAttribute('href');
+                if (id === '#') return;
+                const target = document.querySelector(id);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ── Mixer oscilloscope ───────────────────────────────────
+        (function () {
+            const canvas = document.getElementById('mxr-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let t = 0;
+
+            function frame() {
+                const w = canvas.width, h = canvas.height;
+
+                // Background with subtle vignette
+                ctx.fillStyle = '#000d00';
+                ctx.fillRect(0, 0, w, h);
+
+                // Grid lines
+                ctx.strokeStyle = 'rgba(0,220,60,0.1)';
+                ctx.lineWidth = 0.5;
+                for (let i = 1; i < 4; i++) {
+                    ctx.beginPath(); ctx.moveTo(w / 4 * i, 0); ctx.lineTo(w / 4 * i, h); ctx.stroke();
+                }
+                for (let i = 1; i < 3; i++) {
+                    ctx.beginPath(); ctx.moveTo(0, h / 3 * i); ctx.lineTo(w, h / 3 * i); ctx.stroke();
+                }
+
+                // Waveform glow pass (thick, low opacity)
+                ctx.beginPath();
+                ctx.strokeStyle = 'rgba(0,230,60,0.18)';
+                ctx.lineWidth = 5;
+                for (let x = 0; x <= w; x++) {
+                    const y = h / 2
+                        + Math.sin(x / w * Math.PI * 3 + t) * (h * 0.27)
+                        + Math.sin(x / w * Math.PI * 7 + t * 1.4) * (h * 0.07);
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                // Waveform sharp pass
+                ctx.beginPath();
+                ctx.strokeStyle = '#00e83a';
+                ctx.lineWidth = 1.4;
+                ctx.shadowBlur = 4;
+                ctx.shadowColor = '#00e83a';
+                for (let x = 0; x <= w; x++) {
+                    const y = h / 2
+                        + Math.sin(x / w * Math.PI * 3 + t) * (h * 0.27)
+                        + Math.sin(x / w * Math.PI * 7 + t * 1.4) * (h * 0.07);
+                    x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+                ctx.shadowBlur = 0;
+
+                t += 0.025;
+                requestAnimationFrame(frame);
+            }
+            frame();
+        })();
+    </script>
+
+    <!-- Real 3D glass logo for the booking section (Three.js) -->
+    <script type="module">
+    try {
+        const THREE = await import('three');
+        const { RoomEnvironment } = await import('three/addons/environments/RoomEnvironment.js');
+
+        const canvas = document.getElementById('bk-3d-canvas');
+        if (!canvas) throw new Error('canvas not found');
+
+        const renderer = new THREE.WebGLRenderer({
+            canvas,
+            antialias: true,
+            alpha: true,
+            powerPreference: 'high-performance'
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.25;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+        const scene = new THREE.Scene();
+
+        // High-quality environment for the glass to refract / reflect.
+        const pmrem = new THREE.PMREMGenerator(renderer);
+        scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.02).texture;
+
+        const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+        camera.position.set(0, 0, 9);
+        camera.lookAt(0, 0, 0);
+
+        // ── LIGHTS — multiple rims for rich specular streaks ──
+        // Many directional lights at different angles produce overlapping
+        // specular highlights on the clearcoat — the signature iOS glass look.
+        [
+            { color: 0xffffff, int: 1.6, pos: [-4,  3, -2] },
+            { color: 0xffffff, int: 1.4, pos: [ 4, -2, -2] },
+            { color: 0xeaf0ff, int: 1.0, pos: [ 0,  5,  0] },
+            { color: 0xfff0e0, int: 0.9, pos: [-3, -3,  3] },
+            { color: 0xe0e8ff, int: 0.9, pos: [ 3,  3,  3] },
+            { color: 0xffffff, int: 0.8, pos: [ 0, -4,  1] }
+        ].forEach(l => {
+            const d = new THREE.DirectionalLight(l.color, l.int);
+            d.position.set(...l.pos);
+            scene.add(d);
+        });
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.04));
+
+        // ── GEOMETRY ──────────────────────────────────────────
+        // Group 1065.svg viewBox: 1201 x 1354. Five rounded-rect bars.
+        const VB_W = 1201, VB_H = 1354;
+        const SCALE = 4 / VB_H;     // logo height = 4 world units
+        const RX = 57 * SCALE;       // SVG corner radius (rx="57")
+        const DEPTH = 0.65;          // extrusion depth — visible thickness on rotation
+
+        const BARS = [
+            { x: 0,    y: 413, w: 126, h: 528 },
+            { x: 229,  y: 175, w: 165, h: 1003 },
+            { x: 497,  y: 0,   w: 207, h: 1354 },
+            { x: 807,  y: 175, w: 165, h: 1003 },
+            { x: 1075, y: 413, w: 126, h: 528 },
+        ];
+
+        function roundedRectShape(w, h, r) {
+            const shape = new THREE.Shape();
+            const x = -w / 2, y = -h / 2;
+            const rr = Math.min(r, Math.min(w, h) / 2 - 0.001);
+            shape.moveTo(x + rr, y);
+            shape.lineTo(x + w - rr, y);
+            shape.quadraticCurveTo(x + w, y, x + w, y + rr);
+            shape.lineTo(x + w, y + h - rr);
+            shape.quadraticCurveTo(x + w, y + h, x + w - rr, y + h);
+            shape.lineTo(x + rr, y + h);
+            shape.quadraticCurveTo(x, y + h, x, y + h - rr);
+            shape.lineTo(x, y + rr);
+            shape.quadraticCurveTo(x, y, x + rr, y);
+            return shape;
+        }
+
+        // ── iOS 26 "Liquid Glass" MATERIAL — body pass ────────
+        // Very low opacity body. The clearcoat would normally carry the
+        // highlights, but `opacity: 0.16` multiplies the whole output and
+        // crushes the specular streaks. So this pass only renders a faint
+        // tinted/refracting pane — the bright highlights come from a second
+        // additive Fresnel pass below.
+        const glass = new THREE.MeshPhysicalMaterial({
+            color: 0xffffff,
+            metalness: 0.0,
+            roughness: 0.05,
+            clearcoat: 1.0,
+            clearcoatRoughness: 0.015,
+            specularIntensity: 1.2,
+            specularColor: new THREE.Color(0xffffff),
+            iridescence: 0.18,                 // less colored cast in the body
+            iridescenceIOR: 1.3,
+            iridescenceThicknessRange: [120, 420],
+            envMapIntensity: 1.2,
+            opacity: 0.10,                     // even more transparent
+            transparent: true,
+            side: THREE.FrontSide,
+            depthWrite: false
+        });
+
+        // ── Fresnel rim-highlight shader — additive pass ──────
+        // Renders bright pixels ONLY where the surface normal grazes the
+        // view direction (the bevels and silhouette edges). AdditiveBlending
+        // means these pixels add to the dark page bg / body pass — they
+        // never get dimmed by the body's opacity. This is what gives the
+        // iOS Liquid-Glass look its signature luminous edges.
+        const rim = new THREE.ShaderMaterial({
+            uniforms: {
+                uPower:     { value: 2.8 },     // tighter, sharper edge band
+                uIntensity: { value: 2.6 },     // brighter rim glow on dark bg
+                uTint:      { value: new THREE.Color(0xffffff) }
+            },
+            vertexShader: /* glsl */`
+                varying vec3 vNormalW;
+                varying vec3 vViewDir;
+                void main() {
+                    vec4 wp = modelMatrix * vec4(position, 1.0);
+                    vNormalW = normalize(mat3(modelMatrix) * normal);
+                    vViewDir = normalize(cameraPosition - wp.xyz);
+                    gl_Position = projectionMatrix * viewMatrix * wp;
+                }
+            `,
+            fragmentShader: /* glsl */`
+                varying vec3 vNormalW;
+                varying vec3 vViewDir;
+                uniform float uPower;
+                uniform float uIntensity;
+                uniform vec3  uTint;
+                void main() {
+                    // Classic Fresnel — strong at grazing angles
+                    float fres = 1.0 - max(dot(normalize(vNormalW), normalize(vViewDir)), 0.0);
+                    fres = pow(fres, uPower);
+                    // Sharpen so it lights only the bevel band
+                    float edge = smoothstep(0.45, 1.0, fres);
+                    vec3 col = uTint * (edge * uIntensity);
+                    // alpha = 1 so AdditiveBlending (SrcAlpha * src + 1 * dst)
+                    // doesn't square the contribution. Pure additive.
+                    gl_FragColor = vec4(col, 1.0);
+                }
+            `,
+            transparent: true,
+            blending: THREE.CustomBlending,
+            blendEquation: THREE.AddEquation,
+            blendSrc: THREE.OneFactor,
+            blendDst: THREE.OneFactor,
+            blendSrcAlpha: THREE.OneFactor,
+            blendDstAlpha: THREE.OneFactor,
+            depthWrite: false,
+            depthTest: true,
+            side: THREE.FrontSide
+        });
+
+        const group = new THREE.Group();
+
+        // Per-bar pivot groups — origin at the bar's BOTTOM edge so an
+        // intro `scale.y` animation grows each bar upward like an equalizer.
+        const barPivots = [];
+        const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        BARS.forEach(b => {
+            const w = b.w * SCALE;
+            const h = b.h * SCALE;
+            const shape = roundedRectShape(w, h, RX);
+            const geo = new THREE.ExtrudeGeometry(shape, {
+                depth: DEPTH,
+                bevelEnabled: true,
+                bevelThickness: 0.05,
+                bevelSize: 0.05,
+                bevelSegments: 6,
+                curveSegments: 24
+            });
+            geo.translate(0, 0, -DEPTH / 2);
+            const cx = (b.x + b.w / 2 - VB_W / 2) * SCALE;
+            const cy = -(b.y + b.h / 2 - VB_H / 2) * SCALE;
+
+            const pivot = new THREE.Group();
+            pivot.position.set(cx, cy - h / 2, 0);   // pivot at bottom of the bar
+            pivot.userData.height = h;
+
+            // Body pass — transparent glass
+            const body = new THREE.Mesh(geo, glass);
+            body.position.set(0, h / 2, 0);          // recenter geometry above pivot
+            body.renderOrder = 0;
+            pivot.add(body);
+
+            // Highlight pass — additive Fresnel rim, same geometry
+            const rimMesh = new THREE.Mesh(geo, rim);
+            rimMesh.position.set(0, h / 2, 0);
+            rimMesh.renderOrder = 1;
+            pivot.add(rimMesh);
+
+            pivot.scale.y = reduceMotion ? 1 : 0;    // start collapsed
+            barPivots.push(pivot);
+            group.add(pivot);
+        });
+
+        scene.add(group);
+
+        // ── RESIZE ────────────────────────────────────────────
+        function resize() {
+            const w = canvas.clientWidth || 1;
+            const h = canvas.clientHeight || 1;
+            renderer.setSize(w, h, false);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+        }
+        resize();
+        new ResizeObserver(resize).observe(canvas);
+        window.addEventListener('resize', resize);
+
+        // ── MOUSE TRACKING ────────────────────────────────────
+        // Cursor position normalised to -1..1 across the viewport.
+        // Smoothed via lerp inside the render loop for a soft, weighty feel.
+        const mouse  = { x: 0, y: 0 };
+        const tilt   = { x: 0, y: 0 };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = (e.clientX / window.innerWidth)  * 2 - 1;
+            mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+        }, { passive: true });
+        window.addEventListener('mouseleave', () => { mouse.x = 0; mouse.y = 0; });
+
+        // ── ANIMATION ─────────────────────────────────────────
+        const clock = new THREE.Clock();
+        let rafId = null;
+        let spinY = 0;                      // accumulated ambient spin
+        const TILT = 0.55;                  // max mouse tilt (~32°)
+
+        // Intro reveal: bars rise like an equalizer, staggered from the
+        // center outward, with a slight overshoot. Triggered when the
+        // canvas first scrolls into view.
+        let appearStart = reduceMotion ? 0 : null;
+        const APPEAR_DELAY = 0.45;     // pause after canvas enters viewport
+        const APPEAR_DUR = 1.15;       // per-bar reveal length (slower, easier to read)
+        const APPEAR_STAGGER = 0.14;   // bigger gap between bars
+        const easeOutBack = (x) => {
+            const c1 = 1.70158, c3 = c1 + 1;
+            return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+        };
+
+        if (!reduceMotion) {
+            const io = new IntersectionObserver((entries) => {
+                for (const e of entries) {
+                    if (e.isIntersecting && appearStart == null) {
+                        appearStart = clock.getElapsedTime();
+                        io.disconnect();
+                    }
+                }
+            }, { threshold: 0.15 });
+            io.observe(canvas);
+        }
+
+        function tick() {
+            const dt = clock.getDelta();
+            const t  = clock.getElapsedTime();
+
+            // Smoothly approach mouse-driven targets
+            tilt.x += ((-mouse.y * TILT) - tilt.x) * 0.08;
+            tilt.y += (( mouse.x * TILT) - tilt.y) * 0.08;
+
+            if (!reduceMotion) {
+                spinY += dt * (Math.PI * 2 / 18);   // 18 s for full ambient spin
+            }
+            // Spin and mouse-tilt compose cleanly without overwriting each other
+            group.rotation.y = spinY + tilt.y;
+            group.rotation.x = tilt.x + Math.sin(t * 0.4) * 0.04;
+
+            // Drive the per-bar reveal until every bar has settled
+            if (appearStart != null) {
+                const elapsed = t - appearStart - APPEAR_DELAY;
+                const N = barPivots.length;
+                const center = (N - 1) / 2;
+                let allDone = true;
+                for (let i = 0; i < N; i++) {
+                    const delay = Math.abs(i - center) * APPEAR_STAGGER;
+                    const local = (elapsed - delay) / APPEAR_DUR;
+                    if (local >= 1) {
+                        barPivots[i].scale.y = 1;
+                    } else if (local <= 0) {
+                        barPivots[i].scale.y = 0;
+                        allDone = false;
+                    } else {
+                        barPivots[i].scale.y = Math.max(0, easeOutBack(local));
+                        allDone = false;
+                    }
+                }
+                if (allDone) appearStart = -Infinity; // freeze at scale 1, stop recomputing
+            }
+
+            renderer.render(scene, camera);
+            rafId = requestAnimationFrame(tick);
+        }
+        tick();
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = null;
+            } else if (rafId == null) {
+                clock.getDelta();
+                tick();
+            }
+        });
+    } catch (e) {
+        console.error('[bk-3d] init failed:', e);
+    }
+    </script>
+</body>
+</html>
